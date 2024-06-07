@@ -41,13 +41,13 @@ public class NamekoSpawn : MonoBehaviour
     {
         if (itemManager.is1)
         {
-            minSpawnTime = 3f;
-            spawnTime = 10f;
+            minSpawnTime = 2f;
+            spawnTime = 5f;
         }
         else if (itemManager.is15)
         {
-            minSpawnTime = 5f;
-            spawnTime = 60f;
+            minSpawnTime = 3f;
+            spawnTime = 10f;
         } //시간 아이템 마다 스폰 속도가 다름. 아이템에 따라 시간 조절
 
         if (itemManager.itemFull)
@@ -72,11 +72,11 @@ public class NamekoSpawn : MonoBehaviour
     {
         while (true)
         {
-            //Debug.Log("스폰 시작");
+            Debug.Log("스폰 시작");
             float spawnInterval = Random.Range(minSpawnTime, spawnTime); //10초부터 spawntime 사이
             Debug.Log(spawnInterval);
             yield return new WaitForSeconds(spawnInterval); //일정 시간 기다림
-            //Debug.Log("스폰 기다림");
+            Debug.Log("스폰 기다림");
 
             if (activespawnPrefabList.Count > 0 && itemManager.SpawnOk == true)  //스폰 가능한 위치가 있을때만 나메코 생성
             {
